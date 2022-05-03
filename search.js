@@ -1,10 +1,5 @@
-; (function (root, UMD) {
-  if (typeof define === 'function' && define.amd) define([], UMD)
-  else if (typeof module === 'object' && module.exports) module.exports = UMD()
-  else root.fuzzy = UMD()
-})(this, function UMD() {
+function search() {
   function fuzzySearch(instanceOptions) {
-
     var fuzzy = {
       go: function (search, targets, options) {
         if (!search) return noResults
@@ -235,4 +230,5 @@
   var q = fastpriorityqueue() // reuse this, except for async, it needs to make its own
 
   return fuzzySearch()
-})
+}
+module.exports = search()
